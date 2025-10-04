@@ -1,4 +1,5 @@
-    const { app, BrowserWindow } = require('electron');
+    const { 
+      app, BrowserWindow } = require('electron');
     const path = require('path');
 
     function createWindow() {
@@ -12,5 +13,5 @@
     }
 
     app.whenReady().then(createWindow);
-    app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(); });
+    app.on('window-all-closed', (closed) => { if (process.platform !== 'darwin') app.quit(); });
     
